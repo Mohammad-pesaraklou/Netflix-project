@@ -1,0 +1,15 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+.btnContainer{
+    display: flex;
+    gap: 15px;
+    color: #b11414;
+}
