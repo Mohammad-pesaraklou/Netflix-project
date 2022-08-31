@@ -4,4 +4,12 @@ const shorten = (title) => {
     return newName
 }
 
-export {shorten}
+const shortenDes = (str,num) => {
+    if(str.length > num){
+       return str.slice(0, num) + '...';
+    }else{
+        return str;
+    }
+}
+
+export {shorten,shortenDes}

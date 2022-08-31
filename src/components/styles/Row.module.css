@@ -1,0 +1,91 @@
+.container{
+    margin-bottom: 50px;
+    padding: 20px;
+}
+.imgSlider{
+    height: 100px;
+    width: 90%;
+}
+
+.sliderContainer{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.slidTitle{
+    color: honeydew;
+   font-family: 'Lato';
+   font-size: 18px;
+   display: none;
+   position: absolute;
+   width: 35%;
+   font-weight: 600;
+   
+}
+.overlay{
+    position: absolute;
+    background: rgb(12, 12, 12, 0.50);
+    width: 90%;
+    height: 100%;
+    top: 0;
+}
+
+.like{
+    display: none;
+    z-index: 22;
+    color: rgb(246, 242, 234);
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    font-size: 25px;
+}
+
+.sliderContainer:hover{
+    cursor: pointer;
+}
+.sliderContainer:hover > .slidTitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sliderContainer:hover > .like{
+    display: block;
+}
+
+
+
+@media (max-width: 1000px){
+    .imgSlider{
+        height: 110px;
+    } 
+ 
+}
+
+@media (max-width: 688px){
+    .imgSlider{
+        height: 90px;
+    } 
+   
+}
+@media (max-width: 558px){
+    .imgSlider{
+        height: 80px;
+    } 
+    .slidTitle{
+        font-size: 15px;
+        width: 33%;
+    }
+   
+  
+}
+
+@media (min-width: 1200px){
+    .imgSlider{
+        height: 140px;
+    } 
+  
+}
