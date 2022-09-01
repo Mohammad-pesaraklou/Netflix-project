@@ -50,7 +50,7 @@
     height: 45px;
     border: 1px solid darkgrey;
     border-radius: 6px;
-    background-color: rgb(216, 211, 205);
+    background-color: rgba(125, 122, 118, 0.87);
     outline: none;
     padding: 6px 10px;
   font-size: 15px;
@@ -107,4 +107,28 @@
 .logText span{
     color: #d02a18;
     font-size: 18px;
+}
+.errMsg{
+    padding-top: 18px;
+    color: rgb(153, 5, 5);
+}
+
+
+@media (max-width: 560px){
+    .fromContainer{
+        width: 420px;
+        height: 520px;
+    }
+}
+@media (max-width:450px){
+    .fromContainer{
+        width: 340px;
+        height: 520px;
+    }
+}
+@media (max-width:390px){
+    .fromContainer{
+        width: 300px;
+        height: 520px;
+    }
 }

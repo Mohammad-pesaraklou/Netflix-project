@@ -1,37 +1,44 @@
-import { Route, Routes } from 'react-router-dom';
-import { ThemeProvider,createTheme } from '@mui/material';
-import AuthContextProvider from './context/AuthContextProvider';
+import { Route, Routes } from "react-router-dom";
+import { ThemeProvider, createTheme } from "@mui/material";
+import AuthContextProvider from "./context/AuthContextProvider";
 // components
-import Navbar from './components/Navbar';
-import Home from './components/Home'; 
-import SignUp from './pages/SignUp';
-import Login from './pages/Login';
-import Account from './pages/Account';
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import SignUp from "./pages/SignUp";
+import Login from "./pages/Login";
+import Account from "./pages/Account";
+import ProtectedRoute from "./pages/ProtectedRoute";
 
 const theme = createTheme({
-  palette:{
-    primary:{
-      main: "#e50914"
+  palette: {
+    primary: {
+      main: "#e50914",
     },
     secondary: {
-      main: "#fefefe"
-    }
-  }
-})
-
+      main: "#fefefe",
+    },
+  },
+});
 
 function App() {
   return (
-    <div style={{background: 'black',minHeight: '100vh'}}>
+    <div style={{ background: "black", minHeight: "100vh" }}>
       <AuthContextProvider>
         <ThemeProvider theme={theme}>
-            <Navbar />
-            <Routes>
-              <Route path='/' element={<Home />} />
-              <Route path='/signup' element={<SignUp />} />
-              <Route path='/login' element={<Login />} />
-              <Route path='/account' element={<Account />} />
-            </Routes>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/login" element={<Login />} />
+            <Route
+              path="/account"
+              element={
+                <ProtectedRoute>
+                  <Account />
+                </ProtectedRoute>
+              }
+            />
+          </Routes>
         </ThemeProvider>
       </AuthContextProvider>
     </div>
