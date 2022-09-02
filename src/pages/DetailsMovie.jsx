@@ -1,17 +1,17 @@
+import React, { useContext, useEffect, useState } from 'react';
 import { Button, CircularProgress, Typography } from '@mui/material';
-import axios from 'axios';
-import React, { useContext } from 'react';
-import { useState } from 'react';
-import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import axios from 'axios';
+//CONTEXT
 import { CartContext } from '../context/CartContextProvider';
+//STYLE
 import styles from './styles/Details.module.css'
 
 
 
 const DetailsMovie = () => {
 
-    const {state,dispatch} = useContext(CartContext);
+    const { state, dispatch } = useContext(CartContext);
     const [movie, setMovie] = useState([])
     const params = useParams()
 
@@ -20,27 +20,28 @@ const DetailsMovie = () => {
         axios.get(`https://api.themoviedb.org/3/movie/${params.id}?api_key=921f2cc6357d54f841df004fb0f544cb&language=en-US`)
             .then(res => {
                 setMovie(res.data)
-                console.log(res.data);
             })
     }, [])
 
-    if(!movie) return <CircularProgress sx={{display: 'flex',alignItems: 'center',justifyContent: 'center'}} size={"40"} color='warning'/>
-    
+    if (!movie) return <CircularProgress sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} size={"40"} color='warning' />
+
 
     return (
         <div className={styles.container}>
             <div className={styles.overlay}></div>
             <img className={styles.imgCont} src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`} alt="" />
+
+
             <div className={styles.text}>
-                <Typography fontWeight={700} fontFamily={"Lato"} variant='h2' color={"#ffffff"}>
+                <Typography fontWeight={700} fontFamily={"Lato"} sx={{ fontSize: { xs: '28px', sm: '48px' } }} color={"#ffffff"}>
                     {movie?.title}
                 </Typography>
 
                 <Typography mt={2} fontWeight={700} fontFamily={"Lato"} variant='h5' color={"#fde024"}>
                     {movie?.tagline}
                 </Typography>
-                <div onClick={() => dispatch({type: "ADD_ITEM",payload: movie})}>
-                <Button variant="contained"  sx={{width: '170px',mt: 2,bgcolor: "#fde024",color: 'black'}}>Watch later</Button>
+                <div onClick={() => dispatch({ type: "ADD_ITEM", payload: movie })}>
+                    <Button variant="contained" sx={{ width: '170px', mt: 2, bgcolor: "#fde024", color: 'black' }}>Watch later</Button>
                 </div>
             </div>
             <div className={styles.details}>
@@ -89,6 +90,7 @@ const DetailsMovie = () => {
                     </Typography>
                 </div>
             </div>
+
         </div>
     );
 };

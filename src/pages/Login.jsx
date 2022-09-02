@@ -1,15 +1,18 @@
-import React, { useState } from 'react';
-import styles from './styles/SignUp.module.css'
+import React, { useEffect, useState, useContext } from 'react';
 import { ToastContainer } from 'react-toastify'
 import { Link, useNavigate } from 'react-router-dom';
 import { notify } from './Toastify';
-import { useContext } from 'react';
+//context
 import { AuthContext } from '../context/AuthContextProvider';
+// STYLE
+import styles from './styles/SignUp.module.css'
+
 
 const Login = () => {
 
     const { user, login } = useContext(AuthContext);
     const [email, setEmail] = useState('');
+    const [error, setError] = useState([]);
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
@@ -18,7 +21,7 @@ const Login = () => {
 
     const submitHandler = async event => {
         event.preventDefault();
-        // setError('')
+        setError('')
         try {
             await login(email, password)
             notify("you Login successfully", "success");
@@ -27,7 +30,7 @@ const Login = () => {
         } catch (error) {
             notify("Invalid Data!", "error");
             console.log(error);
-            // setError(error.message)
+            setError(error.message)
         }
     }
 
@@ -40,7 +43,7 @@ const Login = () => {
             <div className={styles.container}>
                 <form onSubmit={submitHandler} className={styles.fromContainer}>
                     <h2 className={styles.header}>Login</h2>
-                    {/* {error ? <h3 className={styles.errMsg}>{error}</h3> : null} */}
+                    {error ? <h3 className={styles.errMsg}>{error}</h3> : null}
                     <div className={styles.filed}>
                         <label>Email</label>
                         <input

@@ -1,20 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+//carousel
 import AliceCarousel from "react-alice-carousel";
-// icons
-import { FaHeart, FaRegHeart } from 'react-icons/fa'
 // styles
 import styles from './styles/Row.module.css';
-import axios from 'axios';
 //context
 import { CartContext } from '../context/CartContextProvider';
-import { useContext } from 'react';
-import { Link } from 'react-router-dom';
 
 
 const Row = ({ title, fetchURL }) => {
 
-    const {state,dispatch} = useContext(CartContext);
+    const { state, dispatch } = useContext(CartContext);
 
     const [like, setLike] = useState(false)
     const [data, setData] = useState([]);
@@ -49,17 +47,17 @@ const Row = ({ title, fetchURL }) => {
             <div className={styles.sliderContainer}>
 
                 <Link className={styles.sliderContainer} to={`/details/${item.id}`}>
-                <div className={styles.overlay}></div>
-                <img src={`https://image.tmdb.org/t/p/w500/${item?.backdrop_path}`}
-                    className={styles.imgSlider}
-                    alt="" />
+                    <div className={styles.overlay}></div>
+                    <img src={`https://image.tmdb.org/t/p/w500/${item?.backdrop_path}`}
+                        className={styles.imgSlider}
+                        alt="" />
 
-                <div className={styles.slidTitle}>
-                    <p>
-                        {item?.title}
-                    </p>
-                </div>
-                    </Link>
+                    <div className={styles.slidTitle}>
+                        <p>
+                            {item?.title}
+                        </p>
+                    </div>
+                </Link>
             </div>
         )
     })

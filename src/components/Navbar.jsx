@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Typography } from '@mui/material';
 //styles
 import styles from './styles/Navbar.module.css'
 import { Link } from 'react-router-dom';
-import { useContext } from 'react';
 import { AuthContext } from '../context/AuthContextProvider';
 
 const Navbar = () => {

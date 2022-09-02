@@ -17,7 +17,7 @@
 
 .text{
 position: absolute;
-top: 30%;
+top: 20%;
 left: 2%;
 display: flex;
 flex-direction: column;
@@ -30,8 +30,23 @@ flex-direction: column;
     display: flex;
     flex-direction: column;
     margin-top: 20px;
+    padding: 12px;
 }
 .genre{
     display: flex;
     align-items: center;
+}
+
+@media (min-width: 1400px){
+    .overlay{
+        width: 100%;
+    }
+}
+@media (max-width: 900px){
+    .overlay{
+        width: 99.8%;
+    }
+    .text{
+        left: 5.5%;
+    }
 }

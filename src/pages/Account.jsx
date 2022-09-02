@@ -1,8 +1,6 @@
+import React, { useContext } from 'react';
 import { Typography } from '@mui/material';
-import React from 'react';
-import { useContext } from 'react';
 import AliceCarousel from "react-alice-carousel";
-
 //context
 import { CartContext } from '../context/CartContextProvider';
 //styles
@@ -10,26 +8,25 @@ import styles from './styles/Account.module.css';
 
 
 const Account = () => {
-    
-    const {state,dispatch} = useContext(CartContext)
-    console.log(state)
+
+    const { state, dispatch } = useContext(CartContext)
 
 
     const items = state?.selectedItems.map(item => {
-        return(
+        return (
             <div className={styles.sliderContainer}>
 
-            <img src={`https://image.tmdb.org/t/p/w500/${item?.backdrop_path}`}
-                className={styles.imgSlider}
-                alt="" />
-            <div className={styles.overlaySlider}></div>
+                <img src={`https://image.tmdb.org/t/p/w500/${item?.backdrop_path}`}
+                    className={styles.imgSlider}
+                    alt="" />
+                <div className={styles.overlaySlider}></div>
 
-            <div className={styles.slidTitle}>
-                <p>
-                    {item?.title}
-                </p>
+                <div className={styles.slidTitle}>
+                    <p>
+                        {item?.title}
+                    </p>
+                </div>
             </div>
-        </div>
         )
     });
 
@@ -59,17 +56,17 @@ const Account = () => {
                 </Typography>
             </div>
             <div className={styles.aliceContainer}>
-            <AliceCarousel
-                mouseTracking
-                infinite
-                autoPlayInterval={1000}
-                animationDuration={1500}
-                //  disableDotsControls
-                disableButtonsControls
-                responsive={responsive}
-                items={items}
-                autoPlay
-            />
+                <AliceCarousel
+                    mouseTracking
+                    infinite
+                    autoPlayInterval={1000}
+                    animationDuration={1500}
+                    //  disableDotsControls
+                    disableButtonsControls
+                    responsive={responsive}
+                    items={items}
+                    autoPlay
+                />
             </div>
         </div>
     );

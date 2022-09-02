@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import styles from './styles/SignUp.module.css'
+import React, { useState, useContext } from 'react';
 import { ToastContainer } from 'react-toastify'
 import { Link, useNavigate } from 'react-router-dom';
 import { notify } from './Toastify';
-import { useContext } from 'react';
+// CONTEXT
 import { AuthContext } from '../context/AuthContextProvider';
-
+// STYLE
+import styles from './styles/SignUp.module.css'
 
 const SignUp = () => {
 

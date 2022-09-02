@@ -1,6 +1,4 @@
-import React, { useState } from 'react';
-import { createContext } from 'react';
-import { useReducer } from 'react';
+import React, { useState, useReducer, createContext } from 'react';
 
 const initialState = {
     selectedItems: []
