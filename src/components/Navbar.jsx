@@ -20,7 +20,6 @@ const Navbar = () => {
         }
     }
 
-
     return (
         <div className={styles.navbar}>
             <Link className={styles.navLink} to="/">

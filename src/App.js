@@ -8,6 +8,9 @@ import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
 import Account from "./pages/Account";
 import ProtectedRoute from "./pages/ProtectedRoute";
+// context
+import CartContextProvider from "./context/CartContextProvider";
+import DetailsMovie from "./pages/DetailsMovie";
 
 const theme = createTheme({
   palette: {
@@ -24,22 +27,25 @@ function App() {
   return (
     <div style={{ background: "black", minHeight: "100vh" }}>
       <AuthContextProvider>
-        <ThemeProvider theme={theme}>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/signup" element={<SignUp />} />
-            <Route path="/login" element={<Login />} />
-            <Route
-              path="/account"
-              element={
-                <ProtectedRoute>
-                  <Account />
-                </ProtectedRoute>
-              }
-            />
-          </Routes>
-        </ThemeProvider>
+        <CartContextProvider>
+          <ThemeProvider theme={theme}>
+            <Navbar />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/signup" element={<SignUp />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/details/:id" element={<DetailsMovie />} />
+              <Route
+                path="/account"
+                element={
+                  <ProtectedRoute>
+                    <Account />
+                  </ProtectedRoute>
+                }
+              />
+            </Routes>
+          </ThemeProvider>
+        </CartContextProvider>
       </AuthContextProvider>
     </div>
   );

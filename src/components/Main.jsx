@@ -9,7 +9,6 @@ import { Button, Grid, Typography } from '@mui/material';
 import { shorten } from '../Helper/Function';
 import { shortenDes } from '../Helper/Function';
 
-
 const Main = () => {
     
     const [movies,setMovies] = useState([]);
@@ -41,8 +40,8 @@ const Main = () => {
                     <Button variant="contained" color="secondary" fontFamily='Lato'>Play</Button>
                     <Button variant="outlined" color="secondary" fontFamily='Lato'>Watch later</Button>
                 </div>
-                <Typography fontWeight={500} fontFamily='Lato' variant='h6' color={"#696464"}>Released: {movie?.release_date}</Typography>
-                <Typography fontFamily='Lato' color="secondary" variant="h6">
+                <Typography fontWeight={500} fontFamily='Lato' variant='h6' color={"#fefefe"}>Released: {movie?.release_date}</Typography>
+                <Typography fontFamily='Lato' color="secondary" variant="h6" >
                 {/* {shortenDes(movie?.overview, 150)} */}
                 {
                       movie?.overview.length > 150 ?
@@ -56,4 +55,4 @@ const Main = () => {
     );
 };
 
-export default Main;
+export default React.memo(Main);

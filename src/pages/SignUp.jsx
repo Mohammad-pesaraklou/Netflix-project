@@ -21,7 +21,7 @@ const SignUp = () => {
         event.preventDefault();
         setError('')
         try {
-            await signIn(email, error)
+            await signIn(email, password)
             notify("you sign up successfully", "success");
             navigate('/')
         } catch (error) {

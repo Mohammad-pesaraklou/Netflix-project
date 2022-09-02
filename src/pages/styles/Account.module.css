@@ -1,0 +1,111 @@
+.container{
+    position: relative;
+}
+
+.imgAc{
+    width: 100vw;
+    height: 550px;
+    object-fit: cover;
+}
+
+.overlay{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background: rgb(10, 10, 10, 0.50);
+    width: 100vw;
+    height: 550px;
+}
+
+.text{
+position: absolute;
+top: 46%;
+left: 2%;
+}
+.itemPic{
+    width: 100px;
+    height: 100px;
+}
+.imgSlider{
+    width: 60%;
+    height: 100px;
+}
+.sliderContainer{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.slidTitle{
+    color: honeydew;
+   font-family: 'Lato';
+   font-size: 18px;
+   display: none;
+   position: absolute;
+   width: 35%;
+   font-weight: 600;
+   
+}
+.overlaySlider{
+    position: absolute;
+    background: rgb(12, 12, 12, 0.50);
+    width: 60%;
+    padding: 20px;
+    height: 100%;
+    top: 0;
+}
+
+.aliceContainer{
+width: 100%;
+margin-top: 30px;    
+}
+
+
+.sliderContainer:hover{
+    cursor: pointer;
+}
+.sliderContainer:hover > .slidTitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sliderContainer:hover > .like{
+    display: block;
+}
+
+
+
+@media (max-width: 1000px){
+    .imgSlider{
+        height: 110px;
+    } 
+ 
+}
+
+@media (max-width: 688px){
+    .imgSlider{
+        height: 90px;
+    } 
+   
+}
+@media (max-width: 558px){
+    .imgSlider{
+        height: 80px;
+    } 
+    .slidTitle{
+        font-size: 15px;
+        width: 33%;
+    }
+   
+  
+}
+
+@media (min-width: 1200px){
+    .imgSlider{
+        height: 140px;
+    } 
+  
+}
