@@ -28,7 +28,7 @@ const Main = () => {
                     <img className={styles.imgCont} src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`} alt="" />
                 </div>
                 <div className={styles.title}>
-                    <Typography fontWeight={600} fontFamily='Lato' variant='h2' color={'#fefefe'}>
+                    <Typography fontWeight={600} fontFamily='Lato' sx={{ fontSize: {xs: '38px',sm: '48px',md: '56px',lg: '82px',xl: '95px'}}}  color={"#fde024"}>
                         {/* {shorten(movie?.original_title)} */}
                         {movie?.original_title}
                     </Typography>

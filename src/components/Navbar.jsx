@@ -22,7 +22,7 @@ const Navbar = () => {
     return (
         <div className={styles.navbar}>
             <Link className={styles.navLink} to="/">
-                <Typography fontFamily={"Lato"} sx={{ cursor: "pointer" }} variant='h3' color={"#e50914"}>
+                <Typography fontFamily={"Lato"} sx={{ cursor: "pointer",fontSize: {xs: '28px',sm: '38px',md: '46px',lg: '52px'} }}  color={"#e50914"}>
                     NETFLIX
                 </Typography>
             </Link>
@@ -30,17 +30,17 @@ const Navbar = () => {
                 user?.email ?
                     <div className={styles.btnContainer}>
                         <Link className={styles.navLink} to="/account">
-                            <Button fontFamily={"Lato"} variant='outlined'>Account</Button>
+                            <Button type='submit' fontFamily={"Lato"} variant='outlined'>Account</Button>
                         </Link>
-                        <Button fontFamily={"Lato"} variant='contained' onClick={logoutHandler}>Logout</Button>
+                        <Button type='submit' fontFamily={"Lato"} variant='contained' onClick={logoutHandler}>Logout</Button>
                     </div>
                     :
                     <div className={styles.btnContainer}>
                         <Link className={styles.navLink} to="/login">
-                            <Button fontFamily={"Lato"} variant='outlined'>Sign In</Button>
+                            <Button type='submit' fontFamily={"Lato"} variant='outlined'>Sign In</Button>
                         </Link>
                         <Link className={styles.navLink} to="/signup">
-                            <Button fontFamily={"Lato"} variant='contained'>Sign Up</Button>
+                            <Button type='submit' fontFamily={"Lato"} variant='contained'>Sign Up</Button>
                         </Link>
                     </div>
             }
