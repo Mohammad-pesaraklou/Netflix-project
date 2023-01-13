@@ -1,6 +1,6 @@
 ## Live Site👇
 
-[Netflix App🧷](https://currencylandate.netlify.app/)
+[Netflix App🧷](https://netflixappate.netlify.app)
 
 
 
